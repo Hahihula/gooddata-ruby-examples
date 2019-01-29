@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'gooddata', :git => 'https://github.com/gooddata/gooddata-ruby.git', :branch => 'master'
+gem 'gooddata'
 gem 'activesupport', '~> 4.1', '>= 4.1.4'
 gem 'asciidoctor', '~> 1.5', '>= 1.5.0'
 gem 'rake', '~> 10.3', '>= 10.3.2'

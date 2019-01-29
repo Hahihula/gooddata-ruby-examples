@@ -1,0 +1,24 @@
+=== Exporting raw report results
+by Petr Gadorek
+
+==== Problem
+You have a report which is too large to be computed on the UI. 
+
+==== Solution
+
+There are a simple way how to export a report in raw form from gooddata
+
+[source,ruby]
+----
+# encoding: utf-8
+
+require 'gooddata'
+
+GoodData.with_connection do |c|
+  GoodData.with_project('project_id') do |project|
+ 	filename = Dir::Tmpname.make_tmpname([File.join(Dir.pwd, Dir::Tmpname.tmpdir, 'raw_export'), '.csv'], nil)
+    project.reports('report_identifier').export_raw(filename)
+  end
+end
+
+----
